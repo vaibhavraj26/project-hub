@@ -8,13 +8,13 @@ services:
     ports:
       - "5000:5000"
     environment:
-      MONGO_URI: mongodb+srv://5860vaibhav_db_user:BJInxCXRUcaNgVzK@projecthub.8pxxj1u.mongodb.net/projecthub?appName=projectHub
-      JWT_SECRET: ${JWT_SECRET:-pHub_s3cr3t_jwt_k3y_2026!xZ9}
+      MONGO_URI: ${MONGO_URI}
+      JWT_SECRET: ${JWT_SECRET}
       JWT_EXPIRE: 7d
       NODE_ENV: production
       PORT: 5000
-      CLIENT_URL: http://localhost:3000
-      SOCKET_IO_CORS: http://localhost:3000
+      CLIENT_URL: ${CLIENT_URL}
+      SOCKET_IO_CORS: ${SOCKET_IO_CORS}
     networks:
       - projecthub-network
     healthcheck:
